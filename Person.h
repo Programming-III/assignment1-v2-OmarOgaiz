@@ -8,10 +8,16 @@ private:
     string name;
     int id;
 public:
+Person (){
+    name = "null";
+    id = 0;
+}
     Person(string n, int i) {
         name = n;
         id = i;
     }
+// destructor 
+    ~Person () {}
 
     void display() {
         cout << "Name: " << name << ", ID: " << id << endl;

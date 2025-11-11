@@ -9,10 +9,16 @@ private:
     string department;
     int experienceyears;
 public:
+Instructor (){
+    department = "Unknown";
+    experienceyears = 0 ;
+}
     Instructor(string n, int i, string d, int e) : Person(n, i) {
         department = d;
         experienceyears = e;
     }
+// destructor 
+    ~Instructor {}
 
     void display() {
         Person::display();

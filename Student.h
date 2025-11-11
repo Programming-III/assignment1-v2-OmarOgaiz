@@ -9,10 +9,15 @@ private:
     int Yearlevel;
     string major;
 public:
+Student (){
+    Yearlevel = 1 ; 
+    major = "Not Found";
+ }
     Student(string n, int i, int y, string m) : Person(n, i) {
         Yearlevel = y;
         major = m;
     }
+~Student {} 
 
     void display() {
         Person::display();

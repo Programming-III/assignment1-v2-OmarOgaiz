@@ -24,7 +24,22 @@ public:
     ~Course() {
         delete[] students;
     }
+ bool addStudent(const Student& s) {
+        if (currentstudent < Maxstudents) {
+            students[currentstudent++] = s;
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    void display() {
+        cout << "Course Name: " << coursename << ", Course Code: " << coursecode << endl;
+        cout << "Enrolled Students:" << endl;
+        for (int i = 0; i < currentstudent; i++) {
+            students[i].display();
+        }
+    }
 
 
 

@@ -5,10 +5,6 @@
 #include "Instructor.h"
 #include "Course.h"
 
-
-using namespace std;
-
-// ==================== Person Class Implementation =========================
 #include <iostream>
 using namespace std;
 
@@ -17,10 +13,17 @@ private:
     string name;
     int id;
 public:
+Person (){
+    name = "null";
+    id = 0;
+}
     Person(string n, int i) {
         name = n;
         id = i;
     }
+    // destructor 
+    ~Person () {}
+
 
     void display() {
         cout << "Name: " << name << ", ID: " << id << endl;
@@ -32,10 +35,16 @@ private:
     int Yearlevel;
     string major;
 public:
+ Student (){
+    Yearlevel = 1 ; 
+    major = "Not Found";
+ }
     Student(string n, int i, int y, string m) : Person(n, i) {
         Yearlevel = y;
         major = m;
     }
+    ~Student {}
+
 
     void display() {
         Person::display();
@@ -48,10 +57,16 @@ private:
     string department;
     int experienceyears;
 public:
+Instructor (){
+    department = "Unknown";
+    experienceyears = 0 ;
+}
     Instructor(string n, int i, string d, int e) : Person(n, i) {
         department = d;
         experienceyears = e;
     }
+    // destructor 
+    ~Instructor {}
 
     void display() {
         Person::display();
@@ -111,6 +126,7 @@ int main() {
 
     return 0;
 }
+
 
 
 
